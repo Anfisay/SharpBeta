@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
 
             else if (id == 3) { deleteSeason(row); }
 
-            }
+        }
 
         private void deleteTourist(int row)
         {

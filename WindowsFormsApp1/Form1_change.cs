@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
                 this.labelTour.Text = this.dataGridView3[0, row].Value.ToString();
                 this.groupBox3.Text = "Изменение тура";
                 fillFormTour(row);
-        }
+            }
             else if (id == 3)
             {
                 this.groupBox4.Visible = true;
@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
         // изменение инфы о туристах
         private void buttonChangeTouristsInfo_Click(object sender, EventArgs e)
         {
-            
+
             string sql = "UPDATE touristsinfo SET idtourist=@idtourist,passport=@passport, city=@city, country=@country, phone=@phone, index=@index WHERE idtourist=@idtourist";
             NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
             cmd.Parameters.AddWithValue("idtourist", Decimal.Parse(this.touristId.Text));
@@ -159,7 +159,7 @@ namespace WindowsFormsApp1
 
             DateTime dateStartTime = this.seasonDateOpen.Value.Date + this.seasonTimeOpen.Value.TimeOfDay;
             DateTime dateEndTime = this.seasonDateClose.Value.Date + this.seasonTimeClose.Value.TimeOfDay;
-            
+
             cmd.Parameters.AddWithValue("id", Decimal.Parse(this.labelSeason.Text));
             cmd.Parameters.AddWithValue("idtour", Decimal.Parse(this.textBoxIDTour.Text));
             cmd.Parameters.AddWithValue("startDate", dateStartTime);
@@ -168,7 +168,7 @@ namespace WindowsFormsApp1
             if (this.checkBoxSeason.Checked)
             {
                 cmd.Parameters.AddWithValue("closeSeason", true);
-        }
+            }
             else
             {
                 cmd.Parameters.AddWithValue("closeSeason", false);

@@ -172,11 +172,11 @@ namespace WindowsFormsApp1
             }
 
             //для запроса
-            if (id == 5) 
+            if (id == 5)
             {
                 this.groupBoxReq.Visible = true;
-        }
+            }
 
+        }
     }
-}
 }

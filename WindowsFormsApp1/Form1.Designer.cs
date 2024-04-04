@@ -110,6 +110,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.labelSeason = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tourists.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -645,6 +646,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.labelSeason);
             this.groupBox4.Controls.Add(this.buttonChangeSeason);
             this.groupBox4.Controls.Add(this.numSeats);
             this.groupBox4.Controls.Add(this.labelSeats);
@@ -670,7 +672,7 @@
             // buttonChangeSeason
             // 
             this.buttonChangeSeason.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.buttonChangeSeason.Location = new System.Drawing.Point(96, 266);
+            this.buttonChangeSeason.Location = new System.Drawing.Point(107, 299);
             this.buttonChangeSeason.Name = "buttonChangeSeason";
             this.buttonChangeSeason.Size = new System.Drawing.Size(75, 28);
             this.buttonChangeSeason.TabIndex = 26;
@@ -679,7 +681,7 @@
             // 
             // numSeats
             // 
-            this.numSeats.Location = new System.Drawing.Point(16, 205);
+            this.numSeats.Location = new System.Drawing.Point(27, 238);
             this.numSeats.Name = "numSeats";
             this.numSeats.Size = new System.Drawing.Size(199, 20);
             this.numSeats.TabIndex = 24;
@@ -688,7 +690,7 @@
             // 
             this.labelSeats.AutoSize = true;
             this.labelSeats.Enabled = false;
-            this.labelSeats.Location = new System.Drawing.Point(14, 189);
+            this.labelSeats.Location = new System.Drawing.Point(25, 222);
             this.labelSeats.Name = "labelSeats";
             this.labelSeats.Size = new System.Drawing.Size(94, 13);
             this.labelSeats.TabIndex = 25;
@@ -697,7 +699,7 @@
             // seasonTimeOpen
             // 
             this.seasonTimeOpen.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.seasonTimeOpen.Location = new System.Drawing.Point(152, 95);
+            this.seasonTimeOpen.Location = new System.Drawing.Point(163, 128);
             this.seasonTimeOpen.Name = "seasonTimeOpen";
             this.seasonTimeOpen.Size = new System.Drawing.Size(63, 20);
             this.seasonTimeOpen.TabIndex = 2;
@@ -705,7 +707,7 @@
             // 
             // seasonDateOpen
             // 
-            this.seasonDateOpen.Location = new System.Drawing.Point(16, 95);
+            this.seasonDateOpen.Location = new System.Drawing.Point(27, 128);
             this.seasonDateOpen.Name = "seasonDateOpen";
             this.seasonDateOpen.Size = new System.Drawing.Size(129, 20);
             this.seasonDateOpen.TabIndex = 3;
@@ -713,7 +715,7 @@
             // checkBoxSeason
             // 
             this.checkBoxSeason.AutoSize = true;
-            this.checkBoxSeason.Location = new System.Drawing.Point(16, 243);
+            this.checkBoxSeason.Location = new System.Drawing.Point(27, 276);
             this.checkBoxSeason.Name = "checkBoxSeason";
             this.checkBoxSeason.Size = new System.Drawing.Size(96, 17);
             this.checkBoxSeason.TabIndex = 23;
@@ -725,7 +727,7 @@
             // 
             this.labelSeasonDateOpen.AutoSize = true;
             this.labelSeasonDateOpen.Enabled = false;
-            this.labelSeasonDateOpen.Location = new System.Drawing.Point(14, 80);
+            this.labelSeasonDateOpen.Location = new System.Drawing.Point(25, 113);
             this.labelSeasonDateOpen.Name = "labelSeasonDateOpen";
             this.labelSeasonDateOpen.Size = new System.Drawing.Size(83, 13);
             this.labelSeasonDateOpen.TabIndex = 15;
@@ -735,7 +737,7 @@
             // 
             this.labelTourID.AutoSize = true;
             this.labelTourID.Enabled = false;
-            this.labelTourID.Location = new System.Drawing.Point(14, 31);
+            this.labelTourID.Location = new System.Drawing.Point(25, 64);
             this.labelTourID.Name = "labelTourID";
             this.labelTourID.Size = new System.Drawing.Size(40, 13);
             this.labelTourID.TabIndex = 22;
@@ -743,14 +745,14 @@
             // 
             // seasonDateClose
             // 
-            this.seasonDateClose.Location = new System.Drawing.Point(18, 148);
+            this.seasonDateClose.Location = new System.Drawing.Point(29, 181);
             this.seasonDateClose.Name = "seasonDateClose";
             this.seasonDateClose.Size = new System.Drawing.Size(129, 20);
             this.seasonDateClose.TabIndex = 16;
             // 
             // textBoxIDTour
             // 
-            this.textBoxIDTour.Location = new System.Drawing.Point(16, 47);
+            this.textBoxIDTour.Location = new System.Drawing.Point(27, 80);
             this.textBoxIDTour.Name = "textBoxIDTour";
             this.textBoxIDTour.Size = new System.Drawing.Size(198, 20);
             this.textBoxIDTour.TabIndex = 21;
@@ -759,7 +761,7 @@
             // 
             this.labelSeasonDateClose.AutoSize = true;
             this.labelSeasonDateClose.Enabled = false;
-            this.labelSeasonDateClose.Location = new System.Drawing.Point(14, 133);
+            this.labelSeasonDateClose.Location = new System.Drawing.Point(25, 166);
             this.labelSeasonDateClose.Name = "labelSeasonDateClose";
             this.labelSeasonDateClose.Size = new System.Drawing.Size(77, 13);
             this.labelSeasonDateClose.TabIndex = 17;
@@ -768,7 +770,7 @@
             // buttonAddSeason
             // 
             this.buttonAddSeason.BackColor = System.Drawing.Color.YellowGreen;
-            this.buttonAddSeason.Location = new System.Drawing.Point(96, 266);
+            this.buttonAddSeason.Location = new System.Drawing.Point(107, 299);
             this.buttonAddSeason.Name = "buttonAddSeason";
             this.buttonAddSeason.Size = new System.Drawing.Size(75, 28);
             this.buttonAddSeason.TabIndex = 20;
@@ -779,7 +781,7 @@
             // seasonTimeClose
             // 
             this.seasonTimeClose.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.seasonTimeClose.Location = new System.Drawing.Point(152, 148);
+            this.seasonTimeClose.Location = new System.Drawing.Point(163, 181);
             this.seasonTimeClose.Name = "seasonTimeClose";
             this.seasonTimeClose.Size = new System.Drawing.Size(63, 20);
             this.seasonTimeClose.TabIndex = 18;
@@ -787,7 +789,7 @@
             // buttonCloseSeason
             // 
             this.buttonCloseSeason.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonCloseSeason.Location = new System.Drawing.Point(16, 266);
+            this.buttonCloseSeason.Location = new System.Drawing.Point(27, 299);
             this.buttonCloseSeason.Name = "buttonCloseSeason";
             this.buttonCloseSeason.Size = new System.Drawing.Size(75, 28);
             this.buttonCloseSeason.TabIndex = 19;
@@ -939,7 +941,6 @@
             this.richTextReq.Size = new System.Drawing.Size(200, 96);
             this.richTextReq.TabIndex = 4;
             this.richTextReq.Text = "";
-            this.richTextReq.TextChanged += new System.EventHandler(this.richTextReq_TextChanged);
             // 
             // textBoxReq
             // 
@@ -956,7 +957,6 @@
             this.labelReq2.Size = new System.Drawing.Size(165, 13);
             this.labelReq2.TabIndex = 1;
             this.labelReq2.Text = "Параметризированный запрос";
-            this.labelReq2.Click += new System.EventHandler(this.label10_Click);
             // 
             // labelReq1
             // 
@@ -1012,6 +1012,16 @@
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // labelSeason
+            // 
+            this.labelSeason.AutoSize = true;
+            this.labelSeason.Enabled = false;
+            this.labelSeason.Location = new System.Drawing.Point(26, 35);
+            this.labelSeason.Name = "labelSeason";
+            this.labelSeason.Size = new System.Drawing.Size(15, 13);
+            this.labelSeason.TabIndex = 28;
+            this.labelSeason.Text = "id";
             // 
             // Form1
             // 
@@ -1137,6 +1147,7 @@
         private System.Windows.Forms.Button buttonXmlDocumentExp;
         private System.Windows.Forms.Button buttonXmlReader;
         private System.Windows.Forms.Button buttonXmlWriter;
+        private System.Windows.Forms.Label labelSeason;
     }
 }
 

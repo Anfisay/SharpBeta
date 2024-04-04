@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -97,7 +97,6 @@ namespace WindowsFormsApp1
         }
 
 
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -155,6 +154,6 @@ namespace WindowsFormsApp1
         }
 
 
-        }
-        }
+    }
+}
 
