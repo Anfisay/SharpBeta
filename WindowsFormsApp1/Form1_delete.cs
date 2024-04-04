@@ -18,26 +18,29 @@ namespace WindowsFormsApp1
         // че происходит если нажимаем на кнопку удаления
         private void delete_Click(object sender, EventArgs e)
         {
-            // здесь нужно получить номер вкладки и номер строки
-            // номер строки
-            int row = this.dataGridView1.CurrentCell.RowIndex;
             int id = this.tabControl1.SelectedIndex;
+            int row = 0;
+
+            if (id == 0) row = this.dataGridView1.CurrentCell.RowIndex;
+            else if (id == 1) row = this.dataGridView2.CurrentCell.RowIndex;
+            else if (id == 2) row = this.dataGridView3.CurrentCell.RowIndex;
+            else if (id == 3) row = this.dataGridView4.CurrentCell.RowIndex;
+            else if (id == 4) row = this.dataGridView5.CurrentCell.RowIndex;
 
             deleteRow(row, id);
         }
 
         private void deleteRow(int row, int id)
         {
-            if (id == 0)
-            {
-                deleteTourist(row);
+            if (id == 0) { deleteTourist(row); }
+
+            else if (id == 1) { deleteTouristInfo(row); }
+
+            else if (id == 2) { deleteTour(row); }
+
+            else if (id == 3) { deleteSeason(row); }
+
             }
-            else if (id==1)
-            {
-                deleteTouristInfo(row);
-            }
-            // аналогично для остальных
-        }
 
         private void deleteTourist(int row)
         {
@@ -55,15 +58,45 @@ namespace WindowsFormsApp1
             loadAll();
         }
 
-
-        //что я добавляла
         private void deleteTouristInfo(int row)
         {
             // получаем индекс туриста
-            int id = Convert.ToInt32(this.dataGridView1[0, row].Value.ToString());
+            int id = Convert.ToInt32(this.dataGridView2[0, row].Value.ToString());
 
             // затем удаляем из таблицы
-            string sql = "DELETE FROM touristsInfo WHERE idtourist=@id";
+            string sql = "DELETE FROM touristsinfo WHERE idtourist=@id";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("id", id);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            // перегружаем все таблицы, так как там связи и могут быть изменения
+            loadAll();
+        }
+
+        private void deleteTour(int row)
+        {
+            // получаем индекс тура
+            int id = Convert.ToInt32(this.dataGridView3[0, row].Value.ToString());
+
+            // затем удаляем из таблицы
+            string sql = "DELETE FROM tours WHERE id=@id";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("id", id);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            // перегружаем все таблицы, так как там связи и могут быть изменения
+            loadAll();
+        }
+
+        private void deleteSeason(int row)
+        {
+            // получаем индекс тура
+            int id = Convert.ToInt32(this.dataGridView4[0, row].Value.ToString());
+
+            // затем удаляем из таблицы
+            string sql = "DELETE FROM seasons WHERE id=@id";
             NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
             cmd.Parameters.AddWithValue("id", id);
             cmd.Prepare();
