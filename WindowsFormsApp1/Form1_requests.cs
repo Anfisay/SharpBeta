@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                //привет
+                //приветтт
                 req1 = this.textBoxReq.Text;
 
                 DataTable dataTable = new DataTable();
