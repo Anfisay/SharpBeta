@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         //подключение к БД
         private NpgsqlConnection con;
         private string connString =
-        "Host=127.0.0.1;Username=postgres;Password=Zerg6161;Database=TourFirm";
+        "Host=127.0.0.1;Username=postgres;Password=melman;Database=TourFirm";
 
         public Form1()
         {
