@@ -1,7 +1,15 @@
-﻿using Npgsql;//класс для работы с БД Postgres
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using Npgsql;//класс для работы с БД Postgres
 
 namespace WindowsFormsApp1
 {
@@ -30,8 +38,8 @@ namespace WindowsFormsApp1
 
             // скрываем кнопки удаления и изменения
             // они будут доступны только после выбора конкретной записи
-            this.buttonChange.Visible = false;
-            this.buttonDelete.Visible = false;
+            //this.buttonChange.Visible = false;
+            //this.buttonDelete.Visible = false;
 
             // скрываем формы
             this.groupBox1.Visible = false;
@@ -62,10 +70,10 @@ namespace WindowsFormsApp1
 
         }
 
-        private void buttonCloseFio_Click(object sender, EventArgs e)
-        {
-            this.groupBox1.Visible = false;
-        }
+        // обработчики кнопки закрыть
+        private void buttonCloseFio_Click(object sender, EventArgs e) { this.groupBox1.Visible = false; }
+        private void buttonCloseTouristsInfo_Click(object sender, EventArgs e) { this.groupBox2.Visible = false; }
+        private void buttonCloseTour_Click(object sender, EventArgs e) { this.groupBox3.Visible = false; }
 
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -116,16 +124,11 @@ namespace WindowsFormsApp1
 
 
         // обработчики для кликанья строчек таблицы
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // показываем кнопки при клике
-            showButtons();
-        }
+        // пока закомментим, кажется, это не нужно
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { /*showButtons();*/ }
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e) { /*showButtons();*/ }
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e) { /*showButtons();*/ }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            showButtons();
-        }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -152,26 +155,6 @@ namespace WindowsFormsApp1
         }
 
 
-
-        private void buttonCloseTour_Click(object sender, EventArgs e)
-        {
-
+        }
         }
 
-
-
-
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextReq_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-    }
-}
