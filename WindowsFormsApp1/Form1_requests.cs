@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             loadSeasons();
             loadPayment();
             loadTours();
-            //tri rubla
+            //tri rublaaaa
         }
         
         private void buttonDoReq1_Click(object sender, EventArgs e)
