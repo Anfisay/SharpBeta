@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = dt;
         }
 
+
         // загрузка данных на экран
         private void loadTourInfo()
         {
