@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
             loadPayment();
             loadTours();
             //lalala
+            //tri rublaaaa
         }
         
         private void buttonDoReq1_Click(object sender, EventArgs e)
