@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             loadSeasons();
             loadPayment();
             loadTours();
+            //lalala
         }
         
         private void buttonDoReq1_Click(object sender, EventArgs e)
