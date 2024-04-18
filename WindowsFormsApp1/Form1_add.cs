@@ -135,6 +135,39 @@ namespace WindowsFormsApp1
             }
         }
 
+        // добавление оплаты
+
+        private void buttonAddPayment_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.idTrip.Text) || string.IsNullOrEmpty(this.pricePayment.Text))
+            {
+                MessageBox.Show("Заполните все поля!");
+            }
+            else
+            {
+                string sql = "INSERT INTO payment(idtrip, paymentdate, summ) VALUES(@idtrip, @paymentdate, @summ)";
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+
+                DateTime datePayment = this.datePayment.Value.Date + this.timePayment.Value.TimeOfDay;
+
+                cmd.Parameters.AddWithValue("idtrip", Decimal.Parse(this.idTrip.Text));
+                cmd.Parameters.AddWithValue("paymentDate", datePayment);
+                cmd.Parameters.AddWithValue("summ", Decimal.Parse(this.pricePayment.Text));
+
+
+
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+                this.idTrip.Text = "";
+                this.datePayment = null;
+                this.timePayment = null;
+                this.pricePayment.Text = "";
+
+                loadPayment();
+            }
+        }
+
 
 
         // общая кнопка добавления
@@ -169,6 +202,13 @@ namespace WindowsFormsApp1
                 this.groupBox4.Text = "Добавление нового сезона";
                 this.buttonAddSeason.Visible = true;
                 this.buttonChangeSeason.Visible = false;
+            }
+            else if (id == 4)
+            {
+                this.groupBox5.Visible = true;
+                this.groupBox5.Text = "Добавление нового платежа";
+                this.buttonAddPayment.Visible = true;
+                this.buttonChangePayment.Visible = false;
             }
 
             //для запроса

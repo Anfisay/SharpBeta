@@ -40,6 +40,8 @@ namespace WindowsFormsApp1
 
             else if (id == 3) { deleteSeason(row); }
 
+            else if (id == 4) { deletePayment(row); }
+
         }
 
         private void deleteTourist(int row)
@@ -97,6 +99,22 @@ namespace WindowsFormsApp1
 
             // затем удаляем из таблицы
             string sql = "DELETE FROM seasons WHERE id=@id";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("id", id);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            // перегружаем все таблицы, так как там связи и могут быть изменения
+            loadAll();
+        }
+
+        private void deletePayment(int row)
+        {
+            // получаем индекс платежа
+            int id = Convert.ToInt32(this.dataGridView5[0, row].Value.ToString());
+
+            // затем удаляем из таблицы
+            string sql = "DELETE FROM payment WHERE id=@id";
             NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
             cmd.Parameters.AddWithValue("id", id);
             cmd.Prepare();

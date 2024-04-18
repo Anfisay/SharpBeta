@@ -69,6 +69,15 @@ namespace WindowsFormsApp1
                 this.groupBox4.Text = "Изменение сезона";
                 fillFormSeason(row);
             }
+            else if (id == 4)
+            {
+                this.groupBox5.Visible = true;
+                this.buttonAddPayment.Visible = false;
+                this.buttonChangePayment.Visible = true;
+                this.labelPayment.Text = this.dataGridView5[0, row].Value.ToString();
+                this.groupBox5.Text = "Изменение платежа";
+                fillFormPayment(row);
+            }
         }
 
         // изменение фио
@@ -189,6 +198,33 @@ namespace WindowsFormsApp1
         }
 
 
+        private void buttonChangePayment_Click(object sender, EventArgs e)
+        {
+
+            string sql = "UPDATE payment SET idtrip=@idtrip, paymentdate=@paymentdate, summ=@summ WHERE id=@id";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+
+            DateTime datePayment = this.datePayment.Value.Date + this.timePayment.Value.TimeOfDay;
+
+            cmd.Parameters.AddWithValue("id", Decimal.Parse(this.labelPayment.Text));
+            cmd.Parameters.AddWithValue("idtrip", Decimal.Parse(this.idTrip.Text));
+            cmd.Parameters.AddWithValue("paymentdate", datePayment);
+            cmd.Parameters.AddWithValue("summ", Decimal.Parse(this.pricePayment.Text));
+
+            
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
+            this.labelPayment.Text = "";
+            this.idTrip.Text = "";
+            this.pricePayment.Text = "";
+
+            loadPayment();
+
+            this.groupBox5.Visible = false;
+        }
+
+
         // заполнение формы, чтобы изменить объект
         private void fillFormFio(int row)
         {
@@ -257,6 +293,31 @@ namespace WindowsFormsApp1
 
             this.seasonDateClose.Value = DateTime.Parse(endData);
             this.seasonTimeClose.Value = DateTime.Parse(endTime);
+        }
+
+        private void fillFormPayment(int row)
+        {
+            this.labelPayment.Text = this.dataGridView5[0, row].Value.ToString();
+            this.idTrip.Text = this.dataGridView5[1, row].Value.ToString();
+            this.pricePayment.Text = this.dataGridView5[3, row].Value.ToString();
+
+
+            string date = this.dataGridView5[2, row].Value.ToString().Substring(0, 10);
+
+            string time;
+
+            if (this.dataGridView4[3, row].Value.ToString().Length == 16)
+            {
+                time = this.dataGridView5[2, row].Value.ToString().Substring(11, 5);
+            }
+            else
+            {
+                time = this.dataGridView5[2, row].Value.ToString().Substring(11, 4);
+            }
+
+            this.datePayment.Value = DateTime.Parse(date);
+            this.timePayment.Value = DateTime.Parse(time);
+
         }
     }
 }

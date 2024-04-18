@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms.VisualStyles;
 using Npgsql;//класс для работы с БД Postgres
+
 
 namespace WindowsFormsApp1
 {
@@ -46,6 +48,7 @@ namespace WindowsFormsApp1
             this.groupBox2.Visible = false;
             this.groupBox3.Visible = false;
             this.groupBox4.Visible = false;
+            this.groupBox5.Visible = false;
 
             this.groupBoxReq.Visible = false;
 
@@ -54,6 +57,9 @@ namespace WindowsFormsApp1
             this.dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView4.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+
 
 
         }
@@ -153,7 +159,29 @@ namespace WindowsFormsApp1
 
         }
 
+        private void textBoxReq_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+ 
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
 
