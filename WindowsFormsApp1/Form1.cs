@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms.VisualStyles;
+using System.Xml;
 using Npgsql;//класс для работы с БД Postgres
 
 
@@ -180,6 +181,8 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        
 
         
     }

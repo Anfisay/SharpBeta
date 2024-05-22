@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -123,6 +125,8 @@
             this.labelReq1 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonChart2 = new System.Windows.Forms.Button();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnColumnChart = new System.Windows.Forms.Button();
             this.columnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -150,6 +154,7 @@
             this.groupBoxReq.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.columnChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,22 +167,20 @@
             this.tabControl1.Controls.Add(this.payment);
             this.tabControl1.Controls.Add(this.requests);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(24, 23);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1654, 871);
+            this.tabControl1.Size = new System.Drawing.Size(827, 453);
             this.tabControl1.TabIndex = 0;
             // 
             // tourists
             // 
             this.tourists.Controls.Add(this.groupBox1);
             this.tourists.Controls.Add(this.dataGridView1);
-            this.tourists.Location = new System.Drawing.Point(8, 39);
-            this.tourists.Margin = new System.Windows.Forms.Padding(6);
+            this.tourists.Location = new System.Drawing.Point(4, 22);
             this.tourists.Name = "tourists";
-            this.tourists.Padding = new System.Windows.Forms.Padding(6);
-            this.tourists.Size = new System.Drawing.Size(1638, 824);
+            this.tourists.Padding = new System.Windows.Forms.Padding(3);
+            this.tourists.Size = new System.Drawing.Size(819, 427);
             this.tourists.TabIndex = 0;
             this.tourists.Text = "Туристы";
             this.tourists.UseVisualStyleBackColor = true;
@@ -195,11 +198,11 @@
             this.groupBox1.Controls.Add(this.labelPatronym);
             this.groupBox1.Controls.Add(this.textBoxPatronym);
             this.groupBox1.Controls.Add(this.labelName);
-            this.groupBox1.Location = new System.Drawing.Point(1096, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(548, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(534, 814);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(267, 423);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -208,10 +211,9 @@
             // 
             this.labelTouristId.AutoSize = true;
             this.labelTouristId.Enabled = false;
-            this.labelTouristId.Location = new System.Drawing.Point(30, 62);
-            this.labelTouristId.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelTouristId.Location = new System.Drawing.Point(15, 32);
             this.labelTouristId.Name = "labelTouristId";
-            this.labelTouristId.Size = new System.Drawing.Size(29, 25);
+            this.labelTouristId.Size = new System.Drawing.Size(15, 13);
             this.labelTouristId.TabIndex = 11;
             this.labelTouristId.Text = "id";
             // 
@@ -219,10 +221,9 @@
             // 
             this.labelToiristId.AutoSize = true;
             this.labelToiristId.Enabled = false;
-            this.labelToiristId.Location = new System.Drawing.Point(30, 62);
-            this.labelToiristId.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelToiristId.Location = new System.Drawing.Point(15, 32);
             this.labelToiristId.Name = "labelToiristId";
-            this.labelToiristId.Size = new System.Drawing.Size(0, 25);
+            this.labelToiristId.Size = new System.Drawing.Size(0, 13);
             this.labelToiristId.TabIndex = 10;
             this.labelToiristId.Click += new System.EventHandler(this.label9_Click);
             // 
@@ -230,10 +231,9 @@
             // 
             this.buttonChangeFio.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonChangeFio.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonChangeFio.Location = new System.Drawing.Point(228, 496);
-            this.buttonChangeFio.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonChangeFio.Location = new System.Drawing.Point(114, 258);
             this.buttonChangeFio.Name = "buttonChangeFio";
-            this.buttonChangeFio.Size = new System.Drawing.Size(180, 75);
+            this.buttonChangeFio.Size = new System.Drawing.Size(90, 39);
             this.buttonChangeFio.TabIndex = 9;
             this.buttonChangeFio.Text = "Изменить";
             this.buttonChangeFio.UseVisualStyleBackColor = false;
@@ -242,20 +242,18 @@
             // textBoxSurname
             // 
             this.textBoxSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxSurname.Location = new System.Drawing.Point(36, 163);
-            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxSurname.Location = new System.Drawing.Point(18, 85);
             this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(372, 44);
+            this.textBoxSurname.Size = new System.Drawing.Size(188, 26);
             this.textBoxSurname.TabIndex = 4;
             this.textBoxSurname.TextChanged += new System.EventHandler(this.textBoxSurname_TextChanged);
             // 
             // buttonAddFio
             // 
             this.buttonAddFio.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.buttonAddFio.Location = new System.Drawing.Point(228, 496);
-            this.buttonAddFio.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAddFio.Location = new System.Drawing.Point(114, 258);
             this.buttonAddFio.Name = "buttonAddFio";
-            this.buttonAddFio.Size = new System.Drawing.Size(180, 75);
+            this.buttonAddFio.Size = new System.Drawing.Size(90, 39);
             this.buttonAddFio.TabIndex = 8;
             this.buttonAddFio.Text = "Добавить";
             this.buttonAddFio.UseVisualStyleBackColor = false;
@@ -265,10 +263,9 @@
             // 
             this.labelSurname.AutoSize = true;
             this.labelSurname.Enabled = false;
-            this.labelSurname.Location = new System.Drawing.Point(30, 121);
-            this.labelSurname.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelSurname.Location = new System.Drawing.Point(15, 63);
             this.labelSurname.Name = "labelSurname";
-            this.labelSurname.Size = new System.Drawing.Size(104, 25);
+            this.labelSurname.Size = new System.Drawing.Size(56, 13);
             this.labelSurname.TabIndex = 1;
             this.labelSurname.Text = "Фамилия";
             this.labelSurname.Click += new System.EventHandler(this.label1_Click);
@@ -276,10 +273,9 @@
             // buttonCloseFio
             // 
             this.buttonCloseFio.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonCloseFio.Location = new System.Drawing.Point(36, 496);
-            this.buttonCloseFio.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonCloseFio.Location = new System.Drawing.Point(18, 258);
             this.buttonCloseFio.Name = "buttonCloseFio";
-            this.buttonCloseFio.Size = new System.Drawing.Size(180, 75);
+            this.buttonCloseFio.Size = new System.Drawing.Size(90, 39);
             this.buttonCloseFio.TabIndex = 7;
             this.buttonCloseFio.Text = "Закрыть";
             this.buttonCloseFio.UseVisualStyleBackColor = false;
@@ -288,38 +284,34 @@
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxName.Location = new System.Drawing.Point(36, 263);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxName.Location = new System.Drawing.Point(18, 137);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(372, 44);
+            this.textBoxName.Size = new System.Drawing.Size(188, 26);
             this.textBoxName.TabIndex = 5;
             // 
             // labelPatronym
             // 
             this.labelPatronym.AutoSize = true;
-            this.labelPatronym.Location = new System.Drawing.Point(40, 344);
-            this.labelPatronym.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelPatronym.Location = new System.Drawing.Point(20, 179);
             this.labelPatronym.Name = "labelPatronym";
-            this.labelPatronym.Size = new System.Drawing.Size(105, 25);
+            this.labelPatronym.Size = new System.Drawing.Size(54, 13);
             this.labelPatronym.TabIndex = 3;
             this.labelPatronym.Text = "Отчество";
             // 
             // textBoxPatronym
             // 
             this.textBoxPatronym.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxPatronym.Location = new System.Drawing.Point(36, 377);
-            this.textBoxPatronym.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxPatronym.Location = new System.Drawing.Point(18, 196);
             this.textBoxPatronym.Name = "textBoxPatronym";
-            this.textBoxPatronym.Size = new System.Drawing.Size(372, 44);
+            this.textBoxPatronym.Size = new System.Drawing.Size(188, 26);
             this.textBoxPatronym.TabIndex = 6;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(40, 233);
-            this.labelName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelName.Location = new System.Drawing.Point(20, 121);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(53, 25);
+            this.labelName.Size = new System.Drawing.Size(29, 13);
             this.labelName.TabIndex = 2;
             this.labelName.Text = "Имя";
             // 
@@ -327,11 +319,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1074, 802);
+            this.dataGridView1.Size = new System.Drawing.Size(537, 417);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -339,11 +330,10 @@
             // 
             this.touristsInfo.Controls.Add(this.groupBox2);
             this.touristsInfo.Controls.Add(this.dataGridView2);
-            this.touristsInfo.Location = new System.Drawing.Point(8, 39);
-            this.touristsInfo.Margin = new System.Windows.Forms.Padding(6);
+            this.touristsInfo.Location = new System.Drawing.Point(4, 22);
             this.touristsInfo.Name = "touristsInfo";
-            this.touristsInfo.Padding = new System.Windows.Forms.Padding(6);
-            this.touristsInfo.Size = new System.Drawing.Size(1638, 824);
+            this.touristsInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.touristsInfo.Size = new System.Drawing.Size(819, 427);
             this.touristsInfo.TabIndex = 1;
             this.touristsInfo.Text = "Информация о туристах";
             this.touristsInfo.UseVisualStyleBackColor = true;
@@ -365,11 +355,11 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.touristCity);
-            this.groupBox2.Location = new System.Drawing.Point(1080, 17);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(540, 9);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(548, 796);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(274, 414);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -378,10 +368,9 @@
             // 
             this.buttonChangeTouristsInfo.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonChangeTouristsInfo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonChangeTouristsInfo.Location = new System.Drawing.Point(280, 683);
-            this.buttonChangeTouristsInfo.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonChangeTouristsInfo.Location = new System.Drawing.Point(140, 355);
             this.buttonChangeTouristsInfo.Name = "buttonChangeTouristsInfo";
-            this.buttonChangeTouristsInfo.Size = new System.Drawing.Size(176, 73);
+            this.buttonChangeTouristsInfo.Size = new System.Drawing.Size(88, 38);
             this.buttonChangeTouristsInfo.TabIndex = 23;
             this.buttonChangeTouristsInfo.Text = "Изменить";
             this.buttonChangeTouristsInfo.UseVisualStyleBackColor = false;
@@ -390,30 +379,27 @@
             // touristIndex
             // 
             this.touristIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.touristIndex.Location = new System.Drawing.Point(56, 604);
-            this.touristIndex.Margin = new System.Windows.Forms.Padding(6);
+            this.touristIndex.Location = new System.Drawing.Point(28, 314);
             this.touristIndex.Name = "touristIndex";
-            this.touristIndex.Size = new System.Drawing.Size(400, 44);
+            this.touristIndex.Size = new System.Drawing.Size(202, 26);
             this.touristIndex.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Enabled = false;
-            this.label8.Location = new System.Drawing.Point(50, 269);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Location = new System.Drawing.Point(25, 140);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 25);
+            this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 22;
             this.label8.Text = "Страна";
             // 
             // buttonAddTouristsInfo
             // 
             this.buttonAddTouristsInfo.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.buttonAddTouristsInfo.Location = new System.Drawing.Point(280, 683);
-            this.buttonAddTouristsInfo.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAddTouristsInfo.Location = new System.Drawing.Point(140, 355);
             this.buttonAddTouristsInfo.Name = "buttonAddTouristsInfo";
-            this.buttonAddTouristsInfo.Size = new System.Drawing.Size(176, 73);
+            this.buttonAddTouristsInfo.Size = new System.Drawing.Size(88, 38);
             this.buttonAddTouristsInfo.TabIndex = 9;
             this.buttonAddTouristsInfo.Text = "Добавить";
             this.buttonAddTouristsInfo.UseVisualStyleBackColor = false;
@@ -422,20 +408,18 @@
             // touristCountry
             // 
             this.touristCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.touristCountry.Location = new System.Drawing.Point(56, 300);
-            this.touristCountry.Margin = new System.Windows.Forms.Padding(6);
+            this.touristCountry.Location = new System.Drawing.Point(28, 156);
             this.touristCountry.Name = "touristCountry";
-            this.touristCountry.Size = new System.Drawing.Size(400, 44);
+            this.touristCountry.Size = new System.Drawing.Size(202, 26);
             this.touristCountry.TabIndex = 21;
             this.touristCountry.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonCloseTouristsInfo
             // 
             this.buttonCloseTouristsInfo.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonCloseTouristsInfo.Location = new System.Drawing.Point(56, 683);
-            this.buttonCloseTouristsInfo.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonCloseTouristsInfo.Location = new System.Drawing.Point(28, 355);
             this.buttonCloseTouristsInfo.Name = "buttonCloseTouristsInfo";
-            this.buttonCloseTouristsInfo.Size = new System.Drawing.Size(176, 73);
+            this.buttonCloseTouristsInfo.Size = new System.Drawing.Size(88, 38);
             this.buttonCloseTouristsInfo.TabIndex = 10;
             this.buttonCloseTouristsInfo.Text = "Закрыть";
             this.buttonCloseTouristsInfo.UseVisualStyleBackColor = false;
@@ -443,50 +427,45 @@
             // touristId
             // 
             this.touristId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.touristId.Location = new System.Drawing.Point(56, 94);
-            this.touristId.Margin = new System.Windows.Forms.Padding(6);
-            this.touristId.MinimumSize = new System.Drawing.Size(350, 40);
+            this.touristId.Location = new System.Drawing.Point(28, 49);
+            this.touristId.MinimumSize = new System.Drawing.Size(177, 40);
             this.touristId.Name = "touristId";
-            this.touristId.Size = new System.Drawing.Size(400, 44);
+            this.touristId.Size = new System.Drawing.Size(202, 26);
             this.touristId.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Enabled = false;
-            this.label7.Location = new System.Drawing.Point(50, 571);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Location = new System.Drawing.Point(25, 297);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 25);
+            this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 19;
             this.label7.Text = "Индекс";
             // 
             // touristPassport
             // 
             this.touristPassport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.touristPassport.Location = new System.Drawing.Point(56, 202);
-            this.touristPassport.Margin = new System.Windows.Forms.Padding(6);
+            this.touristPassport.Location = new System.Drawing.Point(28, 105);
             this.touristPassport.Name = "touristPassport";
-            this.touristPassport.Size = new System.Drawing.Size(400, 44);
+            this.touristPassport.Size = new System.Drawing.Size(202, 26);
             this.touristPassport.TabIndex = 12;
             // 
             // touristPhone
             // 
             this.touristPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.touristPhone.Location = new System.Drawing.Point(56, 506);
-            this.touristPhone.Margin = new System.Windows.Forms.Padding(6);
+            this.touristPhone.Location = new System.Drawing.Point(28, 263);
             this.touristPhone.Name = "touristPhone";
-            this.touristPhone.Size = new System.Drawing.Size(400, 44);
+            this.touristPhone.Size = new System.Drawing.Size(202, 26);
             this.touristPhone.TabIndex = 18;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Enabled = false;
-            this.label3.Location = new System.Drawing.Point(50, 63);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(25, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 25);
+            this.label3.Size = new System.Drawing.Size(15, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "id";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -495,10 +474,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Enabled = false;
-            this.label6.Location = new System.Drawing.Point(50, 475);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Location = new System.Drawing.Point(25, 247);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 25);
+            this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 17;
             this.label6.Text = "Телефон";
             // 
@@ -506,10 +484,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Enabled = false;
-            this.label4.Location = new System.Drawing.Point(50, 169);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(25, 88);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 25);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Пасспорт";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -518,10 +495,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Enabled = false;
-            this.label5.Location = new System.Drawing.Point(50, 362);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(25, 188);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 25);
+            this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 16;
             this.label5.Text = "Город";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -529,21 +505,19 @@
             // touristCity
             // 
             this.touristCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.touristCity.Location = new System.Drawing.Point(56, 404);
-            this.touristCity.Margin = new System.Windows.Forms.Padding(6);
+            this.touristCity.Location = new System.Drawing.Point(28, 210);
             this.touristCity.Name = "touristCity";
-            this.touristCity.Size = new System.Drawing.Size(400, 44);
+            this.touristCity.Size = new System.Drawing.Size(202, 26);
             this.touristCity.TabIndex = 15;
             // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.Size = new System.Drawing.Size(1066, 802);
+            this.dataGridView2.Size = new System.Drawing.Size(533, 417);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -551,10 +525,9 @@
             // 
             this.tours.Controls.Add(this.groupBox3);
             this.tours.Controls.Add(this.dataGridView3);
-            this.tours.Location = new System.Drawing.Point(8, 39);
-            this.tours.Margin = new System.Windows.Forms.Padding(6);
+            this.tours.Location = new System.Drawing.Point(4, 22);
             this.tours.Name = "tours";
-            this.tours.Size = new System.Drawing.Size(1638, 824);
+            this.tours.Size = new System.Drawing.Size(819, 427);
             this.tours.TabIndex = 2;
             this.tours.Text = "Туры";
             this.tours.UseVisualStyleBackColor = true;
@@ -571,11 +544,11 @@
             this.groupBox3.Controls.Add(this.textBoxTourName);
             this.groupBox3.Controls.Add(this.buttonCloseTour);
             this.groupBox3.Controls.Add(this.textBoxTourPrice);
-            this.groupBox3.Location = new System.Drawing.Point(1060, 13);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Location = new System.Drawing.Point(530, 7);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(576, 812);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(288, 422);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
@@ -584,10 +557,9 @@
             // 
             this.labelTour.AutoSize = true;
             this.labelTour.Enabled = false;
-            this.labelTour.Location = new System.Drawing.Point(28, 60);
-            this.labelTour.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelTour.Location = new System.Drawing.Point(14, 31);
             this.labelTour.Name = "labelTour";
-            this.labelTour.Size = new System.Drawing.Size(29, 25);
+            this.labelTour.Size = new System.Drawing.Size(15, 13);
             this.labelTour.TabIndex = 13;
             this.labelTour.Text = "id";
             // 
@@ -595,10 +567,9 @@
             // 
             this.buttonChangeTour.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonChangeTour.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonChangeTour.Location = new System.Drawing.Point(240, 479);
-            this.buttonChangeTour.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonChangeTour.Location = new System.Drawing.Point(120, 249);
             this.buttonChangeTour.Name = "buttonChangeTour";
-            this.buttonChangeTour.Size = new System.Drawing.Size(164, 69);
+            this.buttonChangeTour.Size = new System.Drawing.Size(82, 36);
             this.buttonChangeTour.TabIndex = 12;
             this.buttonChangeTour.Text = "Изменить";
             this.buttonChangeTour.UseVisualStyleBackColor = false;
@@ -607,19 +578,17 @@
             // 
             this.textBoxTourInfo.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxTourInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxTourInfo.Location = new System.Drawing.Point(32, 394);
-            this.textBoxTourInfo.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxTourInfo.Location = new System.Drawing.Point(16, 205);
             this.textBoxTourInfo.Name = "textBoxTourInfo";
-            this.textBoxTourInfo.Size = new System.Drawing.Size(372, 44);
+            this.textBoxTourInfo.Size = new System.Drawing.Size(188, 26);
             this.textBoxTourInfo.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 350);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(13, 182);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 25);
+            this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Информация о туре";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
@@ -627,30 +596,27 @@
             // labelNameTour
             // 
             this.labelNameTour.AutoSize = true;
-            this.labelNameTour.Location = new System.Drawing.Point(26, 113);
-            this.labelNameTour.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelNameTour.Location = new System.Drawing.Point(13, 59);
             this.labelNameTour.Name = "labelNameTour";
-            this.labelNameTour.Size = new System.Drawing.Size(160, 25);
+            this.labelNameTour.Size = new System.Drawing.Size(82, 13);
             this.labelNameTour.TabIndex = 2;
             this.labelNameTour.Text = "Название тура";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 244);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(13, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Цена";
             // 
             // buttonAddTour
             // 
             this.buttonAddTour.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.buttonAddTour.Location = new System.Drawing.Point(240, 479);
-            this.buttonAddTour.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAddTour.Location = new System.Drawing.Point(120, 249);
             this.buttonAddTour.Name = "buttonAddTour";
-            this.buttonAddTour.Size = new System.Drawing.Size(164, 67);
+            this.buttonAddTour.Size = new System.Drawing.Size(82, 35);
             this.buttonAddTour.TabIndex = 9;
             this.buttonAddTour.Text = "Добавить";
             this.buttonAddTour.UseVisualStyleBackColor = false;
@@ -659,19 +625,17 @@
             // textBoxTourName
             // 
             this.textBoxTourName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxTourName.Location = new System.Drawing.Point(32, 169);
-            this.textBoxTourName.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxTourName.Location = new System.Drawing.Point(16, 88);
             this.textBoxTourName.Name = "textBoxTourName";
-            this.textBoxTourName.Size = new System.Drawing.Size(372, 44);
+            this.textBoxTourName.Size = new System.Drawing.Size(188, 26);
             this.textBoxTourName.TabIndex = 5;
             // 
             // buttonCloseTour
             // 
             this.buttonCloseTour.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonCloseTour.Location = new System.Drawing.Point(30, 479);
-            this.buttonCloseTour.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonCloseTour.Location = new System.Drawing.Point(15, 249);
             this.buttonCloseTour.Name = "buttonCloseTour";
-            this.buttonCloseTour.Size = new System.Drawing.Size(160, 69);
+            this.buttonCloseTour.Size = new System.Drawing.Size(80, 36);
             this.buttonCloseTour.TabIndex = 8;
             this.buttonCloseTour.Text = "Закрыть";
             this.buttonCloseTour.UseVisualStyleBackColor = false;
@@ -681,31 +645,28 @@
             // 
             this.textBoxTourPrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxTourPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxTourPrice.Location = new System.Drawing.Point(30, 275);
-            this.textBoxTourPrice.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxTourPrice.Location = new System.Drawing.Point(15, 143);
             this.textBoxTourPrice.Name = "textBoxTourPrice";
-            this.textBoxTourPrice.Size = new System.Drawing.Size(374, 44);
+            this.textBoxTourPrice.Size = new System.Drawing.Size(189, 26);
             this.textBoxTourPrice.TabIndex = 6;
             // 
             // dataGridView3
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 82;
-            this.dataGridView3.Size = new System.Drawing.Size(1046, 813);
+            this.dataGridView3.Size = new System.Drawing.Size(523, 423);
             this.dataGridView3.TabIndex = 1;
             // 
             // seasons
             // 
             this.seasons.Controls.Add(this.groupBox4);
             this.seasons.Controls.Add(this.dataGridView4);
-            this.seasons.Location = new System.Drawing.Point(8, 39);
-            this.seasons.Margin = new System.Windows.Forms.Padding(6);
+            this.seasons.Location = new System.Drawing.Point(4, 22);
             this.seasons.Name = "seasons";
-            this.seasons.Size = new System.Drawing.Size(1638, 824);
+            this.seasons.Size = new System.Drawing.Size(819, 427);
             this.seasons.TabIndex = 3;
             this.seasons.Text = "Сезоны";
             this.seasons.UseVisualStyleBackColor = true;
@@ -727,11 +688,11 @@
             this.groupBox4.Controls.Add(this.buttonAddSeason);
             this.groupBox4.Controls.Add(this.seasonTimeClose);
             this.groupBox4.Controls.Add(this.buttonCloseSeason);
-            this.groupBox4.Location = new System.Drawing.Point(1028, 8);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Location = new System.Drawing.Point(514, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(612, 812);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(306, 422);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             // 
@@ -739,10 +700,9 @@
             // 
             this.labelSeason.AutoSize = true;
             this.labelSeason.Enabled = false;
-            this.labelSeason.Location = new System.Drawing.Point(52, 67);
-            this.labelSeason.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelSeason.Location = new System.Drawing.Point(26, 35);
             this.labelSeason.Name = "labelSeason";
-            this.labelSeason.Size = new System.Drawing.Size(29, 25);
+            this.labelSeason.Size = new System.Drawing.Size(15, 13);
             this.labelSeason.TabIndex = 28;
             this.labelSeason.Text = "id";
             // 
@@ -750,10 +710,9 @@
             // 
             this.buttonChangeSeason.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonChangeSeason.ForeColor = System.Drawing.Color.Snow;
-            this.buttonChangeSeason.Location = new System.Drawing.Point(323, 627);
-            this.buttonChangeSeason.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonChangeSeason.Location = new System.Drawing.Point(162, 326);
             this.buttonChangeSeason.Name = "buttonChangeSeason";
-            this.buttonChangeSeason.Size = new System.Drawing.Size(222, 78);
+            this.buttonChangeSeason.Size = new System.Drawing.Size(111, 41);
             this.buttonChangeSeason.TabIndex = 26;
             this.buttonChangeSeason.Text = "Изменить";
             this.buttonChangeSeason.UseVisualStyleBackColor = false;
@@ -762,20 +721,18 @@
             // numSeats
             // 
             this.numSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.numSeats.Location = new System.Drawing.Point(54, 479);
-            this.numSeats.Margin = new System.Windows.Forms.Padding(6);
+            this.numSeats.Location = new System.Drawing.Point(27, 249);
             this.numSeats.Name = "numSeats";
-            this.numSeats.Size = new System.Drawing.Size(491, 44);
+            this.numSeats.Size = new System.Drawing.Size(246, 26);
             this.numSeats.TabIndex = 24;
             // 
             // labelSeats
             // 
             this.labelSeats.AutoSize = true;
             this.labelSeats.Enabled = false;
-            this.labelSeats.Location = new System.Drawing.Point(50, 448);
-            this.labelSeats.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelSeats.Location = new System.Drawing.Point(25, 233);
             this.labelSeats.Name = "labelSeats";
-            this.labelSeats.Size = new System.Drawing.Size(183, 25);
+            this.labelSeats.Size = new System.Drawing.Size(94, 13);
             this.labelSeats.TabIndex = 25;
             this.labelSeats.Text = "Количество мест";
             // 
@@ -783,29 +740,26 @@
             // 
             this.seasonTimeOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.seasonTimeOpen.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.seasonTimeOpen.Location = new System.Drawing.Point(370, 267);
-            this.seasonTimeOpen.Margin = new System.Windows.Forms.Padding(6);
+            this.seasonTimeOpen.Location = new System.Drawing.Point(185, 139);
             this.seasonTimeOpen.Name = "seasonTimeOpen";
-            this.seasonTimeOpen.Size = new System.Drawing.Size(175, 44);
+            this.seasonTimeOpen.Size = new System.Drawing.Size(90, 26);
             this.seasonTimeOpen.TabIndex = 2;
             this.seasonTimeOpen.ValueChanged += new System.EventHandler(this.seasonTimeOpen_ValueChanged);
             // 
             // seasonDateOpen
             // 
             this.seasonDateOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.seasonDateOpen.Location = new System.Drawing.Point(54, 267);
-            this.seasonDateOpen.Margin = new System.Windows.Forms.Padding(6);
+            this.seasonDateOpen.Location = new System.Drawing.Point(27, 139);
             this.seasonDateOpen.Name = "seasonDateOpen";
-            this.seasonDateOpen.Size = new System.Drawing.Size(290, 44);
+            this.seasonDateOpen.Size = new System.Drawing.Size(147, 26);
             this.seasonDateOpen.TabIndex = 3;
             // 
             // checkBoxSeason
             // 
             this.checkBoxSeason.AutoSize = true;
-            this.checkBoxSeason.Location = new System.Drawing.Point(54, 552);
-            this.checkBoxSeason.Margin = new System.Windows.Forms.Padding(6);
+            this.checkBoxSeason.Location = new System.Drawing.Point(27, 287);
             this.checkBoxSeason.Name = "checkBoxSeason";
-            this.checkBoxSeason.Size = new System.Drawing.Size(179, 29);
+            this.checkBoxSeason.Size = new System.Drawing.Size(96, 17);
             this.checkBoxSeason.TabIndex = 23;
             this.checkBoxSeason.Text = "сезон закрыт";
             this.checkBoxSeason.UseVisualStyleBackColor = true;
@@ -815,10 +769,9 @@
             // 
             this.labelSeasonDateOpen.AutoSize = true;
             this.labelSeasonDateOpen.Enabled = false;
-            this.labelSeasonDateOpen.Location = new System.Drawing.Point(50, 238);
-            this.labelSeasonDateOpen.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelSeasonDateOpen.Location = new System.Drawing.Point(25, 124);
             this.labelSeasonDateOpen.Name = "labelSeasonDateOpen";
-            this.labelSeasonDateOpen.Size = new System.Drawing.Size(162, 25);
+            this.labelSeasonDateOpen.Size = new System.Drawing.Size(83, 13);
             this.labelSeasonDateOpen.TabIndex = 15;
             this.labelSeasonDateOpen.Text = "Начало сезона";
             // 
@@ -826,49 +779,44 @@
             // 
             this.labelTourID.AutoSize = true;
             this.labelTourID.Enabled = false;
-            this.labelTourID.Location = new System.Drawing.Point(50, 123);
-            this.labelTourID.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelTourID.Location = new System.Drawing.Point(25, 64);
             this.labelTourID.Name = "labelTourID";
-            this.labelTourID.Size = new System.Drawing.Size(80, 25);
+            this.labelTourID.Size = new System.Drawing.Size(40, 13);
             this.labelTourID.TabIndex = 22;
             this.labelTourID.Text = "id тура";
             // 
             // seasonDateClose
             // 
             this.seasonDateClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.seasonDateClose.Location = new System.Drawing.Point(58, 369);
-            this.seasonDateClose.Margin = new System.Windows.Forms.Padding(6);
+            this.seasonDateClose.Location = new System.Drawing.Point(29, 192);
             this.seasonDateClose.Name = "seasonDateClose";
-            this.seasonDateClose.Size = new System.Drawing.Size(286, 44);
+            this.seasonDateClose.Size = new System.Drawing.Size(145, 26);
             this.seasonDateClose.TabIndex = 16;
             // 
             // textBoxIDTour
             // 
             this.textBoxIDTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxIDTour.Location = new System.Drawing.Point(54, 154);
-            this.textBoxIDTour.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxIDTour.Location = new System.Drawing.Point(27, 80);
             this.textBoxIDTour.Name = "textBoxIDTour";
-            this.textBoxIDTour.Size = new System.Drawing.Size(491, 44);
+            this.textBoxIDTour.Size = new System.Drawing.Size(248, 26);
             this.textBoxIDTour.TabIndex = 21;
             // 
             // labelSeasonDateClose
             // 
             this.labelSeasonDateClose.AutoSize = true;
             this.labelSeasonDateClose.Enabled = false;
-            this.labelSeasonDateClose.Location = new System.Drawing.Point(50, 340);
-            this.labelSeasonDateClose.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelSeasonDateClose.Location = new System.Drawing.Point(25, 177);
             this.labelSeasonDateClose.Name = "labelSeasonDateClose";
-            this.labelSeasonDateClose.Size = new System.Drawing.Size(150, 25);
+            this.labelSeasonDateClose.Size = new System.Drawing.Size(77, 13);
             this.labelSeasonDateClose.TabIndex = 17;
             this.labelSeasonDateClose.Text = "Конец сезона";
             // 
             // buttonAddSeason
             // 
             this.buttonAddSeason.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.buttonAddSeason.Location = new System.Drawing.Point(323, 627);
-            this.buttonAddSeason.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAddSeason.Location = new System.Drawing.Point(162, 326);
             this.buttonAddSeason.Name = "buttonAddSeason";
-            this.buttonAddSeason.Size = new System.Drawing.Size(222, 78);
+            this.buttonAddSeason.Size = new System.Drawing.Size(111, 41);
             this.buttonAddSeason.TabIndex = 20;
             this.buttonAddSeason.Text = "Добавить";
             this.buttonAddSeason.UseVisualStyleBackColor = false;
@@ -878,19 +826,17 @@
             // 
             this.seasonTimeClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.seasonTimeClose.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.seasonTimeClose.Location = new System.Drawing.Point(370, 369);
-            this.seasonTimeClose.Margin = new System.Windows.Forms.Padding(6);
+            this.seasonTimeClose.Location = new System.Drawing.Point(185, 192);
             this.seasonTimeClose.Name = "seasonTimeClose";
-            this.seasonTimeClose.Size = new System.Drawing.Size(175, 44);
+            this.seasonTimeClose.Size = new System.Drawing.Size(90, 26);
             this.seasonTimeClose.TabIndex = 18;
             // 
             // buttonCloseSeason
             // 
             this.buttonCloseSeason.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonCloseSeason.Location = new System.Drawing.Point(58, 627);
-            this.buttonCloseSeason.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonCloseSeason.Location = new System.Drawing.Point(29, 326);
             this.buttonCloseSeason.Name = "buttonCloseSeason";
-            this.buttonCloseSeason.Size = new System.Drawing.Size(230, 78);
+            this.buttonCloseSeason.Size = new System.Drawing.Size(115, 41);
             this.buttonCloseSeason.TabIndex = 19;
             this.buttonCloseSeason.Text = "Закрыть";
             this.buttonCloseSeason.UseVisualStyleBackColor = false;
@@ -899,21 +845,19 @@
             // 
             this.dataGridView4.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 82;
-            this.dataGridView4.Size = new System.Drawing.Size(1012, 813);
+            this.dataGridView4.Size = new System.Drawing.Size(506, 423);
             this.dataGridView4.TabIndex = 1;
             // 
             // payment
             // 
             this.payment.Controls.Add(this.groupBox5);
             this.payment.Controls.Add(this.dataGridView5);
-            this.payment.Location = new System.Drawing.Point(8, 39);
-            this.payment.Margin = new System.Windows.Forms.Padding(6);
+            this.payment.Location = new System.Drawing.Point(4, 22);
             this.payment.Name = "payment";
-            this.payment.Size = new System.Drawing.Size(1638, 824);
+            this.payment.Size = new System.Drawing.Size(819, 427);
             this.payment.TabIndex = 4;
             this.payment.Text = "Оплата";
             this.payment.UseVisualStyleBackColor = true;
@@ -921,11 +865,11 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Location = new System.Drawing.Point(1012, 6);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Location = new System.Drawing.Point(506, 3);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(624, 815);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(312, 424);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             // 
@@ -942,9 +886,11 @@
             this.groupBox6.Controls.Add(this.buttonAddPayment);
             this.groupBox6.Controls.Add(this.idTrip);
             this.groupBox6.Controls.Add(this.closePayment);
-            this.groupBox6.Location = new System.Drawing.Point(-1, 0);
+            this.groupBox6.Location = new System.Drawing.Point(0, 0);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(627, 818);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Size = new System.Drawing.Size(314, 425);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
@@ -953,29 +899,26 @@
             // 
             this.timePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.timePayment.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePayment.Location = new System.Drawing.Point(345, 300);
-            this.timePayment.Margin = new System.Windows.Forms.Padding(6);
+            this.timePayment.Location = new System.Drawing.Point(172, 156);
             this.timePayment.Name = "timePayment";
-            this.timePayment.Size = new System.Drawing.Size(175, 44);
+            this.timePayment.Size = new System.Drawing.Size(90, 26);
             this.timePayment.TabIndex = 25;
             // 
             // datePayment
             // 
             this.datePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.datePayment.Location = new System.Drawing.Point(31, 300);
-            this.datePayment.Margin = new System.Windows.Forms.Padding(6);
+            this.datePayment.Location = new System.Drawing.Point(16, 156);
             this.datePayment.Name = "datePayment";
-            this.datePayment.Size = new System.Drawing.Size(290, 44);
+            this.datePayment.Size = new System.Drawing.Size(147, 26);
             this.datePayment.TabIndex = 24;
             // 
             // labelPayment
             // 
             this.labelPayment.AutoSize = true;
             this.labelPayment.Enabled = false;
-            this.labelPayment.Location = new System.Drawing.Point(26, 47);
-            this.labelPayment.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelPayment.Location = new System.Drawing.Point(13, 24);
             this.labelPayment.Name = "labelPayment";
-            this.labelPayment.Size = new System.Drawing.Size(29, 25);
+            this.labelPayment.Size = new System.Drawing.Size(15, 13);
             this.labelPayment.TabIndex = 23;
             this.labelPayment.Text = "id";
             // 
@@ -983,10 +926,9 @@
             // 
             this.buttonChangePayment.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.buttonChangePayment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonChangePayment.Location = new System.Drawing.Point(238, 518);
-            this.buttonChangePayment.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonChangePayment.Location = new System.Drawing.Point(119, 269);
             this.buttonChangePayment.Name = "buttonChangePayment";
-            this.buttonChangePayment.Size = new System.Drawing.Size(164, 69);
+            this.buttonChangePayment.Size = new System.Drawing.Size(82, 36);
             this.buttonChangePayment.TabIndex = 22;
             this.buttonChangePayment.Text = "Изменить";
             this.buttonChangePayment.UseVisualStyleBackColor = false;
@@ -996,29 +938,26 @@
             // 
             this.pricePayment.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.pricePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pricePayment.Location = new System.Drawing.Point(30, 435);
-            this.pricePayment.Margin = new System.Windows.Forms.Padding(6);
+            this.pricePayment.Location = new System.Drawing.Point(15, 226);
             this.pricePayment.Name = "pricePayment";
-            this.pricePayment.Size = new System.Drawing.Size(372, 44);
+            this.pricePayment.Size = new System.Drawing.Size(188, 26);
             this.pricePayment.TabIndex = 20;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 391);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label10.Location = new System.Drawing.Point(12, 203);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 25);
+            this.label10.Size = new System.Drawing.Size(62, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Стоимость";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 110);
-            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label11.Location = new System.Drawing.Point(13, 57);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 25);
+            this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 14;
             this.label11.Text = "id путевки";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -1026,20 +965,18 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 248);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.Location = new System.Drawing.Point(12, 129);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(153, 25);
+            this.label12.Size = new System.Drawing.Size(79, 13);
             this.label12.TabIndex = 15;
             this.label12.Text = "Дата платежа";
             // 
             // buttonAddPayment
             // 
             this.buttonAddPayment.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.buttonAddPayment.Location = new System.Drawing.Point(238, 520);
-            this.buttonAddPayment.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAddPayment.Location = new System.Drawing.Point(119, 270);
             this.buttonAddPayment.Name = "buttonAddPayment";
-            this.buttonAddPayment.Size = new System.Drawing.Size(164, 67);
+            this.buttonAddPayment.Size = new System.Drawing.Size(82, 35);
             this.buttonAddPayment.TabIndex = 19;
             this.buttonAddPayment.Text = "Добавить";
             this.buttonAddPayment.UseVisualStyleBackColor = false;
@@ -1048,19 +985,17 @@
             // idTrip
             // 
             this.idTrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.idTrip.Location = new System.Drawing.Point(30, 156);
-            this.idTrip.Margin = new System.Windows.Forms.Padding(6);
+            this.idTrip.Location = new System.Drawing.Point(15, 81);
             this.idTrip.Name = "idTrip";
-            this.idTrip.Size = new System.Drawing.Size(372, 44);
+            this.idTrip.Size = new System.Drawing.Size(188, 26);
             this.idTrip.TabIndex = 16;
             // 
             // closePayment
             // 
             this.closePayment.BackColor = System.Drawing.Color.Gainsboro;
-            this.closePayment.Location = new System.Drawing.Point(28, 520);
-            this.closePayment.Margin = new System.Windows.Forms.Padding(6);
+            this.closePayment.Location = new System.Drawing.Point(14, 270);
             this.closePayment.Name = "closePayment";
-            this.closePayment.Size = new System.Drawing.Size(160, 69);
+            this.closePayment.Size = new System.Drawing.Size(80, 36);
             this.closePayment.TabIndex = 18;
             this.closePayment.Text = "Закрыть";
             this.closePayment.UseVisualStyleBackColor = false;
@@ -1070,21 +1005,19 @@
             // 
             this.dataGridView5.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView5.Location = new System.Drawing.Point(3, 3);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowHeadersWidth = 82;
-            this.dataGridView5.Size = new System.Drawing.Size(996, 813);
+            this.dataGridView5.Size = new System.Drawing.Size(498, 423);
             this.dataGridView5.TabIndex = 1;
             // 
             // requests
             // 
             this.requests.Controls.Add(this.groupBoxReq);
             this.requests.Controls.Add(this.dataGridView6);
-            this.requests.Location = new System.Drawing.Point(8, 39);
-            this.requests.Margin = new System.Windows.Forms.Padding(6);
+            this.requests.Location = new System.Drawing.Point(4, 22);
             this.requests.Name = "requests";
-            this.requests.Size = new System.Drawing.Size(1638, 824);
+            this.requests.Size = new System.Drawing.Size(819, 427);
             this.requests.TabIndex = 5;
             this.requests.Text = "Запросы";
             this.requests.UseVisualStyleBackColor = true;
@@ -1101,11 +1034,11 @@
             this.groupBoxReq.Controls.Add(this.textBoxReq);
             this.groupBoxReq.Controls.Add(this.labelReq2);
             this.groupBoxReq.Controls.Add(this.labelReq1);
-            this.groupBoxReq.Location = new System.Drawing.Point(1090, 6);
-            this.groupBoxReq.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxReq.Location = new System.Drawing.Point(545, 3);
+            this.groupBoxReq.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxReq.Name = "groupBoxReq";
-            this.groupBoxReq.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxReq.Size = new System.Drawing.Size(524, 802);
+            this.groupBoxReq.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxReq.Size = new System.Drawing.Size(262, 417);
             this.groupBoxReq.TabIndex = 3;
             this.groupBoxReq.TabStop = false;
             // 
@@ -1113,57 +1046,56 @@
             // 
             this.buttonXmlDocumentImp.BackColor = System.Drawing.Color.LightPink;
             this.buttonXmlDocumentImp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonXmlDocumentImp.Location = new System.Drawing.Point(284, 660);
-            this.buttonXmlDocumentImp.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonXmlDocumentImp.Location = new System.Drawing.Point(142, 343);
             this.buttonXmlDocumentImp.Name = "buttonXmlDocumentImp";
-            this.buttonXmlDocumentImp.Size = new System.Drawing.Size(180, 75);
+            this.buttonXmlDocumentImp.Size = new System.Drawing.Size(90, 39);
             this.buttonXmlDocumentImp.TabIndex = 15;
             this.buttonXmlDocumentImp.Text = "Импорт XmlDocument";
             this.buttonXmlDocumentImp.UseVisualStyleBackColor = false;
+            this.buttonXmlDocumentImp.Click += new System.EventHandler(this.buttonXmlDocumentImp_Click);
             // 
             // buttonXmlDocumentExp
             // 
             this.buttonXmlDocumentExp.BackColor = System.Drawing.Color.LightPink;
             this.buttonXmlDocumentExp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonXmlDocumentExp.Location = new System.Drawing.Point(284, 573);
-            this.buttonXmlDocumentExp.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonXmlDocumentExp.Location = new System.Drawing.Point(142, 298);
             this.buttonXmlDocumentExp.Name = "buttonXmlDocumentExp";
-            this.buttonXmlDocumentExp.Size = new System.Drawing.Size(180, 75);
+            this.buttonXmlDocumentExp.Size = new System.Drawing.Size(90, 39);
             this.buttonXmlDocumentExp.TabIndex = 14;
             this.buttonXmlDocumentExp.Text = "Экспорт XmlDocument";
             this.buttonXmlDocumentExp.UseVisualStyleBackColor = false;
+            this.buttonXmlDocumentExp.Click += new System.EventHandler(this.buttonXmlDocumentExp_Click);
             // 
             // buttonXmlReader
             // 
             this.buttonXmlReader.BackColor = System.Drawing.Color.LightPink;
             this.buttonXmlReader.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonXmlReader.Location = new System.Drawing.Point(64, 660);
-            this.buttonXmlReader.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonXmlReader.Location = new System.Drawing.Point(32, 343);
             this.buttonXmlReader.Name = "buttonXmlReader";
-            this.buttonXmlReader.Size = new System.Drawing.Size(180, 75);
+            this.buttonXmlReader.Size = new System.Drawing.Size(90, 39);
             this.buttonXmlReader.TabIndex = 13;
             this.buttonXmlReader.Text = "Импорт XmlReader";
             this.buttonXmlReader.UseVisualStyleBackColor = false;
+            this.buttonXmlReader.Click += new System.EventHandler(this.buttonXmlReader_Click);
             // 
             // buttonXmlWriter
             // 
             this.buttonXmlWriter.BackColor = System.Drawing.Color.LightPink;
             this.buttonXmlWriter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonXmlWriter.Location = new System.Drawing.Point(64, 573);
-            this.buttonXmlWriter.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonXmlWriter.Location = new System.Drawing.Point(32, 298);
             this.buttonXmlWriter.Name = "buttonXmlWriter";
-            this.buttonXmlWriter.Size = new System.Drawing.Size(180, 75);
+            this.buttonXmlWriter.Size = new System.Drawing.Size(90, 39);
             this.buttonXmlWriter.TabIndex = 12;
             this.buttonXmlWriter.Text = "Экспорт XmlWriter";
             this.buttonXmlWriter.UseVisualStyleBackColor = false;
+            this.buttonXmlWriter.Click += new System.EventHandler(this.buttonXmlWriter_Click);
             // 
             // buttonDoReq2
             // 
             this.buttonDoReq2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.buttonDoReq2.Location = new System.Drawing.Point(288, 467);
-            this.buttonDoReq2.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonDoReq2.Location = new System.Drawing.Point(144, 243);
             this.buttonDoReq2.Name = "buttonDoReq2";
-            this.buttonDoReq2.Size = new System.Drawing.Size(176, 73);
+            this.buttonDoReq2.Size = new System.Drawing.Size(88, 38);
             this.buttonDoReq2.TabIndex = 11;
             this.buttonDoReq2.Text = "Выполнить";
             this.buttonDoReq2.UseVisualStyleBackColor = false;
@@ -1172,10 +1104,9 @@
             // buttonDoReq1
             // 
             this.buttonDoReq1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.buttonDoReq1.Location = new System.Drawing.Point(288, 160);
-            this.buttonDoReq1.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonDoReq1.Location = new System.Drawing.Point(144, 83);
             this.buttonDoReq1.Name = "buttonDoReq1";
-            this.buttonDoReq1.Size = new System.Drawing.Size(176, 73);
+            this.buttonDoReq1.Size = new System.Drawing.Size(88, 38);
             this.buttonDoReq1.TabIndex = 10;
             this.buttonDoReq1.Text = "Выполнить";
             this.buttonDoReq1.UseVisualStyleBackColor = false;
@@ -1183,39 +1114,35 @@
             // 
             // richTextReq
             // 
-            this.richTextReq.Location = new System.Drawing.Point(64, 271);
-            this.richTextReq.Margin = new System.Windows.Forms.Padding(6);
+            this.richTextReq.Location = new System.Drawing.Point(32, 141);
             this.richTextReq.Name = "richTextReq";
-            this.richTextReq.Size = new System.Drawing.Size(396, 181);
+            this.richTextReq.Size = new System.Drawing.Size(200, 96);
             this.richTextReq.TabIndex = 4;
             this.richTextReq.Text = "";
             // 
             // textBoxReq
             // 
-            this.textBoxReq.Location = new System.Drawing.Point(64, 110);
-            this.textBoxReq.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxReq.Location = new System.Drawing.Point(32, 57);
             this.textBoxReq.Name = "textBoxReq";
-            this.textBoxReq.Size = new System.Drawing.Size(396, 31);
+            this.textBoxReq.Size = new System.Drawing.Size(200, 20);
             this.textBoxReq.TabIndex = 2;
             this.textBoxReq.TextChanged += new System.EventHandler(this.textBoxReq_TextChanged);
             // 
             // labelReq2
             // 
             this.labelReq2.AutoSize = true;
-            this.labelReq2.Location = new System.Drawing.Point(58, 240);
-            this.labelReq2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelReq2.Location = new System.Drawing.Point(29, 125);
             this.labelReq2.Name = "labelReq2";
-            this.labelReq2.Size = new System.Drawing.Size(321, 25);
+            this.labelReq2.Size = new System.Drawing.Size(165, 13);
             this.labelReq2.TabIndex = 1;
             this.labelReq2.Text = "Параметризированный запрос";
             // 
             // labelReq1
             // 
             this.labelReq1.AutoSize = true;
-            this.labelReq1.Location = new System.Drawing.Point(58, 79);
-            this.labelReq1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelReq1.Location = new System.Drawing.Point(29, 41);
             this.labelReq1.Name = "labelReq1";
-            this.labelReq1.Size = new System.Drawing.Size(368, 25);
+            this.labelReq1.Size = new System.Drawing.Size(189, 13);
             this.labelReq1.TabIndex = 0;
             this.labelReq1.Text = "Агрегированный запрос (MAX, MIN)";
             // 
@@ -1223,32 +1150,62 @@
             // 
             this.dataGridView6.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(6, 13);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView6.Location = new System.Drawing.Point(3, 7);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.RowHeadersWidth = 82;
-            this.dataGridView6.Size = new System.Drawing.Size(1074, 802);
+            this.dataGridView6.Size = new System.Drawing.Size(537, 417);
             this.dataGridView6.TabIndex = 1;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonChart2);
+            this.tabPage1.Controls.Add(this.chart2);
             this.tabPage1.Controls.Add(this.btnColumnChart);
             this.tabPage1.Controls.Add(this.columnChart);
-            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1638, 824);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(819, 427);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Диаграммы отчетов";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // buttonChart2
+            // 
+            this.buttonChart2.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonChart2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonChart2.Location = new System.Drawing.Point(361, 21);
+            this.buttonChart2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonChart2.Name = "buttonChart2";
+            this.buttonChart2.Size = new System.Drawing.Size(156, 50);
+            this.buttonChart2.TabIndex = 3;
+            this.buttonChart2.Text = "Показать круговую диаграмму";
+            this.buttonChart2.UseVisualStyleBackColor = false;
+            this.buttonChart2.Click += new System.EventHandler(this.buttonChart2_Click);
+            // 
+            // chart2
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
+            this.chart2.Location = new System.Drawing.Point(361, 85);
+            this.chart2.Margin = new System.Windows.Forms.Padding(2);
+            this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chart2.Size = new System.Drawing.Size(322, 267);
+            this.chart2.TabIndex = 2;
+            this.chart2.Text = "chart1";
             // 
             // btnColumnChart
             // 
             this.btnColumnChart.BackColor = System.Drawing.Color.PaleVioletRed;
             this.btnColumnChart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnColumnChart.Location = new System.Drawing.Point(1173, 87);
+            this.btnColumnChart.Location = new System.Drawing.Point(13, 21);
+            this.btnColumnChart.Margin = new System.Windows.Forms.Padding(2);
             this.btnColumnChart.Name = "btnColumnChart";
-            this.btnColumnChart.Size = new System.Drawing.Size(313, 97);
+            this.btnColumnChart.Size = new System.Drawing.Size(156, 50);
             this.btnColumnChart.TabIndex = 1;
             this.btnColumnChart.Text = "Показать столбчатую диаграмму";
             this.btnColumnChart.UseVisualStyleBackColor = false;
@@ -1260,10 +1217,11 @@
             this.columnChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.columnChart.Legends.Add(legend2);
-            this.columnChart.Location = new System.Drawing.Point(28, 31);
+            this.columnChart.Location = new System.Drawing.Point(13, 85);
+            this.columnChart.Margin = new System.Windows.Forms.Padding(2);
             this.columnChart.Name = "columnChart";
             this.columnChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            this.columnChart.Size = new System.Drawing.Size(974, 680);
+            this.columnChart.Size = new System.Drawing.Size(322, 267);
             this.columnChart.TabIndex = 0;
             this.columnChart.Text = "chart1";
             // 
@@ -1271,10 +1229,9 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.Transparent;
             this.buttonDelete.ForeColor = System.Drawing.Color.IndianRed;
-            this.buttonDelete.Location = new System.Drawing.Point(520, 917);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonDelete.Location = new System.Drawing.Point(260, 477);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(236, 65);
+            this.buttonDelete.Size = new System.Drawing.Size(118, 34);
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -1284,10 +1241,9 @@
             // 
             this.buttonChange.BackColor = System.Drawing.Color.Transparent;
             this.buttonChange.ForeColor = System.Drawing.Color.SteelBlue;
-            this.buttonChange.Location = new System.Drawing.Point(272, 917);
-            this.buttonChange.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonChange.Location = new System.Drawing.Point(136, 477);
             this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(236, 65);
+            this.buttonChange.Size = new System.Drawing.Size(118, 34);
             this.buttonChange.TabIndex = 2;
             this.buttonChange.Text = "Изменить";
             this.buttonChange.UseVisualStyleBackColor = false;
@@ -1297,10 +1253,9 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.White;
             this.buttonAdd.ForeColor = System.Drawing.Color.ForestGreen;
-            this.buttonAdd.Location = new System.Drawing.Point(24, 917);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAdd.Location = new System.Drawing.Point(12, 477);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(236, 65);
+            this.buttonAdd.Size = new System.Drawing.Size(118, 34);
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -1308,15 +1263,14 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(1696, 1019);
+            this.ClientSize = new System.Drawing.Size(848, 530);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonChange);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "БД \"Турфирма\"";
             this.tabControl1.ResumeLayout(false);
@@ -1347,6 +1301,7 @@
             this.groupBoxReq.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.columnChart)).EndInit();
             this.ResumeLayout(false);
 
@@ -1452,6 +1407,8 @@
         private System.Windows.Forms.Button closePayment;
         private System.Windows.Forms.DateTimePicker datePayment;
         private System.Windows.Forms.DateTimePicker timePayment;
+        private System.Windows.Forms.Button buttonChart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }
 

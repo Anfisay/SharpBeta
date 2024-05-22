@@ -1,6 +1,8 @@
 ﻿using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,7 @@ namespace WindowsFormsApp1
 
             List<int> tourists = getTourists(trips);
 
-            
+
 
             // Установим палитру
             columnChart.Palette = ChartColorPalette.Pastel;
@@ -47,7 +49,7 @@ namespace WindowsFormsApp1
             List<int> trips = new List<int>();
 
             string sql = "SELECT idtrip FROM payment";
-            NpgsqlCommand cmd = new NpgsqlCommand(sql, con); 
+            NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
             cmd.Prepare();
 
             NpgsqlDataReader reader = cmd.ExecuteReader();
@@ -135,7 +137,7 @@ namespace WindowsFormsApp1
 
                 while (reader.Read())
                 {
-                    tour= reader.GetInt32(0);
+                    tour = reader.GetInt32(0);
                 }
 
                 reader.Close();
@@ -163,8 +165,41 @@ namespace WindowsFormsApp1
             return cost;
         }
 
+        private void buttonChart2_Click(object sender, EventArgs e)
+        {
+            Series series = new Series();
+            series.ChartType = SeriesChartType.Pie;
+
+            string query = @"
+        SELECT 
+            Tours.name AS TourName, 
+            COUNT(Trips.id) AS TripCount,
+            (CAST(COUNT(Trips.id) AS FLOAT) / (SELECT COUNT(*) FROM Trips)) * 100 AS TripPercentage
+        FROM Tours
+        LEFT JOIN Seasons ON Tours.id = Seasons.idTour
+        LEFT JOIN Trips ON Seasons.id = Trips.idSeason
+        GROUP BY Tours.name";
+
+            using (NpgsqlCommand command = new NpgsqlCommand(query, con))
+            {
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string name = reader["TourName"].ToString();
+                        double amount = Convert.ToDouble(reader["TripPercentage"]);
+                        series.Points.AddXY(name, amount);
+                    }
+                }
+            }
+
+            chart2.Series.Clear(); // Очистка старых серий перед добавлением новой
+            chart2.Series.Add(series);
+            chart2.Series[0]["PieLabelStyle"] = "Disabled"; // Отключение меток внутри круговой диаграммы
 
 
+
+        }
     }
 }
 
